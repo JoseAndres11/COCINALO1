@@ -1,0 +1,67 @@
+@import "../../App.scss";
+
+// Estilo para el contenedor de categorías
+.sc-category {
+    // Define el diseño de la cuadrícula para diferentes tamaños de pantalla
+    @media screen and (min-width: 420px) {
+        grid-template-columns: repeat(2, 1fr); // 2 columnas en pantallas mayores a 420px
+        column-gap: 24px; // Espacio entre columnas
+    }
+
+    @media screen and (min-width: 576px) {
+        grid-template-columns: repeat(3, 1fr); // 3 columnas en pantallas mayores a 576px
+    }
+
+    @media screen and (min-width: 992px) {
+        grid-template-columns: repeat(4, 1fr); // 4 columnas en pantallas mayores a 992px
+    }
+
+    @media screen and (min-width: 1080px) {
+        grid-template-columns: repeat(5, 1fr); // 5 columnas en pantallas mayores a 1080px
+    }
+
+    // Estilo para los elementos de categoría
+    .category-itm {
+        background-color: $clr-white; // Color de fondo blanco
+        position: relative; // Posición relativa para el uso de elementos absolutos dentro
+        margin: 12px auto; // Margen superior e inferior de 12px y centrado horizontal
+        box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px; // Sombra del cuadro
+        border-radius: 3px; // Bordes redondeados
+        box-shadow: rgba(99, 99, 99, 0.09) 0px 2px 8px 0px; // Segunda sombra para efecto de profundidad
+
+        &-img {
+            height: 150px; // Altura fija para la imagen
+            position: relative; // Posición relativa
+
+            img {
+                padding: 12px; // Espaciado interno
+                transition: $transition; // Transición suave para efectos
+            }
+
+            // Efecto al pasar el mouse
+            &:hover {
+                img {
+                    transform: scale(0.8); // Escala la imagen al 80% al pasar el mouse
+                }
+            }
+        }
+
+        &-title {
+            position: absolute; // Posición absoluta
+            top: 6px; // Distancia desde la parte superior
+            right: 6px; // Distancia desde la derecha
+            padding: 1px 8px; // Espaciado interno
+            border-radius: 3px; // Bordes redondeados
+            box-shadow: rgba(0, 0, 0, 0.14) 0px 3px 8px; // Sombra del título
+            transition: $transition; // Transición suave
+        }
+
+        // Efecto al pasar el mouse sobre el elemento de categoría
+        &:hover {
+            .category-itm-title {
+                opacity: 1; // Hace visible el título
+                border-radius: 2px; // Cambia el borde a más redondeado
+            }
+        }
+    }
+}
