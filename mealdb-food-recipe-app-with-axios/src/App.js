@@ -27,3 +27,4 @@ import Sidebar from "./components/Sidebar/Sidebar";
  * Rutas:
  * - "/" (Home): Renderiza el componente `Home`.
  * - "/meal/:id" (MealDetails): Renderiza el componente `MealDetails`, donde `:id` es el parámetro dinámico para identificar l
+sadasdasdsad
